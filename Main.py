@@ -3,7 +3,7 @@ import sys,requests,json
 from PyQt5 import QtWidgets,QtGui,QtCore
 from PyQt5.QtWidgets import QApplication, QMainWindow
 import api,Judge
-token,status,id=0,0,0
+token,status,id='',0,0
 
 
 class ENTER(QMainWindow, Enter.Ui_MainWindow):  # 登录页面
@@ -17,10 +17,8 @@ class ENTER(QMainWindow, Enter.Ui_MainWindow):  # 登录页面
         w = REGISTER(window)
         w.show()
     def for_enter(self):
-        User_account='041702215'
-        User_password='zxcvbnm.'
-        #User_account=self.account.text()
-        #User_password=self.password.text()
+        User_account=self.account.text()
+        User_password=self.password.text()
         if User_account == "":
             self.reminder.setText("请输入账号!")
         elif User_password == "":
@@ -112,11 +110,12 @@ class RANK(QMainWindow, Rank.Ui_MainWindow): # 排行榜
                 #item.setText(QtCore.QCoreApplication.translate("MainWindow", re_js[i]["player_id"]))
                 # 为每个表格内添加数据
                 Item = QtWidgets.QTableWidgetItem(re_js[i]["player_id"])
-                print(Item)
                 self.tableWidget.setItem(i, 0, Item)
                 #self.tableWidget.setItem(i, 0, QtWidgets.QTableWidgetItem(re_js[i]["player_id"]))
                 #self.tableWidget.setItem(i, 1, QtWidgets.QTableWidgetItem(re_js[i]["score"]))
-                self.show()
+                w=REMINDER(window)
+                w.Text.setText("此功能尚待开发，敬请期待")
+                w.show()
         else:
             w = REMINDER(window)
             w.Text.setText("出现未知错误")
@@ -139,7 +138,7 @@ class RECORD(QMainWindow, Record.Ui_MainWindow):  # 对战记录
         w.show()
     def for_details(self):
         id = self.number.text()
-        re_js = api.get_detail(token, id)
+        re_js = api.get_detail(token, int(id))
         if (re_js):
             self.shape.setText(re_js["card"])
             self.change.setText(re_js["score"])
