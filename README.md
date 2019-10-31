@@ -1,11 +1,13 @@
-### 运行环境
-windows + 工具版本：python3.7 + 运行前需先下载pyqt5、requests第三方库
+# 13water
+徽章可能需要翻墙才能正常显示  
+![](https://img.shields.io/badge/language-python-red.svg)
 
-
-### 使用方法
-AI算法放在ai.py文件中，下载完后所有文件打开该文件可进行测试.
-可通过下载项目运行main.exe或main.py进行运行，运行过程中可能会出现页面卡顿的现象，还请各位耐心等待，谢谢
-
-### 主要用法：
+[![codebeat badge](https://codebeat.co/badges/a9c07cfe-52ac-4e47-9191-a6956f6f3162)](https://codebeat.co/projects/github-com-lylinyi-13water-master)
+## 运行环境
+Windows/Mac os
+模块依赖PyQt5,requests
+## 编译方法
+无需编译
+## 使用方法
 打开.exe，进入登录界面，用已绑定的账号（没有的话点击注册进入注册界面进行注册）进行登录，登录成功后可进行
-快速游戏（直接跳转到战局详情）、排行榜、历史对战查询等操作：
+快速游戏（直接跳转到战局详情）、排行榜、历史对战查询等操作
